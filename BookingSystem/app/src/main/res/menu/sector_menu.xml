@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/sector_a1"
+        android:title="A1"
+        />
+    <item
+        android:id="@+id/sector_a2"
+        android:title="A2"
+        />
+    <item
+        android:id="@+id/sector_c1"
+        android:title="C1"
+        />
+    <item
+        android:id="@+id/sector_b1"
+        android:title="B1"
+
+        />
+    <item
+        android:id="@+id/sector_b2"
+        android:title="B2"
+
+        />
+    <item
+        android:id="@+id/sector_b3"
+        android:title="B3"
+
+        />
+</menu>

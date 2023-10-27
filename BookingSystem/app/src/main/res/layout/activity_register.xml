@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/back_auth"
+    android:id="@+id/root_element"
+    tools:context=".SignUp">
+
+
+    <EditText
+        android:id="@+id/et_name"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="155dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="@color/purple_500"
+        android:fontFamily="@font/b612"
+        android:hint="your_name"
+        android:inputType="textPersonName"
+        android:padding="15dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="15sp" />
+
+
+    <EditText
+        android:id="@+id/et_email"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="@color/text_bottom"
+        android:fontFamily="@font/b612"
+        android:hint="e_mail"
+        android:inputType="textEmailAddress"
+        android:padding="15dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="15sp" />
+
+    <EditText
+        android:id="@+id/et_password"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="@color/purple_500"
+        android:fontFamily="@font/b612"
+        android:hint="password"
+        android:inputType="textPassword"
+        android:padding="15dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="15sp" />
+
+    <EditText
+        android:id="@+id/et_repassword"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:backgroundTint="@color/text_bottom"
+        android:fontFamily="@font/b612"
+        android:hint="confirm_password"
+        android:inputType="textPassword"
+        android:padding="15dp"
+
+        android:textColor="@color/white"
+
+        android:textColorHint="@color/white"
+        android:textSize="15sp" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <Button
+            android:id="@+id/btn_register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="30dp"
+            android:text="register"
+            android:textColor="@android:color/white" />
+
+
+    </RelativeLayout>
+
+</LinearLayout>

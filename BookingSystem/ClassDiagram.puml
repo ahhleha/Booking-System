@@ -1,0 +1,204 @@
+@startuml
+class com.Kursach.bookingsystem.SeatSelection {
+# void onCreate(Bundle)
+}
+class com.Kursach.bookingsystem.HistoryFragment {
++ {static} HistoryFragment newInstance()
++ View onCreateView(LayoutInflater,ViewGroup,Bundle)
+}
+class com.Kursach.bookingsystem.AddMatch {
+~ DatabaseReference ref
+~ String sector1
+# void onCreate(Bundle)
+- void sectorInitialize()
+}
+class com.Kursach.bookingsystem.Matches {
+~ int id
+~ String nameFirstTeam
++ String getNameFirstTeam()
++ void setNameFirstTeam(String)
++ String getNameSecondTeam()
++ void setNameSecondTeam(String)
++ String getDateOfGame()
++ void setDateOfGame(String)
++ String getTimeOfGame()
++ void setTimeOfGame(String)
++ String getStadium()
++ void setStadium(String)
++ int getId()
++ void setId(int)
++ String getSectorA1()
++ void setSectorA1(String)
+}
+class com.Kursach.bookingsystem.MainActivity {
+- FirebaseAuth auth
+# void onCreate(Bundle)
+# void onActivityResult(int,int,Intent)
+}
+class com.Kursach.bookingsystem.ShopActivity {
+~ TextView IdM
+# void onCreate(Bundle)
+}
+class com.Kursach.bookingsystem.Choosing_seat {
+~ ViewGroup layout
+~ DatabaseReference ref
+~ List<TextView> seatViewList
+~ int seatSize
+~ int seatGaping
+~ List<Integer> arr
+~ int STATUS_AVAILABLE
+~ int STATUS_BOOKED
+~ int STATUS_RESERVED
+~ String selectedIds
+# void onCreate(Bundle)
++ void onClick(View)
+}
+class com.Kursach.bookingsystem.PersonFragment {
+~ FirebaseAuth mAuth
+~ FirebaseDatabase firebaseDatabase
+~ DatabaseReference databaseReference
+- TextView NickName
+- TextView Email
++ {static} PersonFragment newInstance()
++ View onCreateView(LayoutInflater,ViewGroup,Bundle)
+}
+class com.Kursach.bookingsystem.StadiumsFragment {
+- {static} String ARG_PARAM1
+- {static} String ARG_PARAM2
+- String mParam1
+- String mParam2
+- ArrayList<Stadium> stadiumsArrayList
+- RecyclerView recyclerView
+- StadiumAdapter stadiumAdapter
++ {static} StadiumsFragment newInstance(String,String)
++ void onCreate(Bundle)
++ View onCreateView(LayoutInflater,ViewGroup,Bundle)
++ void onViewCreated(View,Bundle)
+- void dataInitialize()
+}
+class com.Kursach.bookingsystem.Stadium {
+~ String name
++ String getName()
++ void setName(String)
++ String getInfo()
++ void setInfo(String)
++ String getUrl_image()
++ void setUrl_image(String)
+}
+class com.Kursach.bookingsystem.MatchAdapter {
+~ Context context
+~ ArrayList<Matches> matchesArrayList
+- MatchViewHolder holder
+- OnMatchesClickListener onClickListener
++ MatchAdapter.MatchViewHolder onCreateViewHolder(ViewGroup,int)
++ void onBindViewHolder(MatchAdapter.MatchViewHolder,int)
++ int getItemCount()
+}
+interface com.Kursach.bookingsystem.MatchAdapter.OnMatchesClickListener {
+~ void onMatchesClick(Matches,int)
+}
+class com.Kursach.bookingsystem.MatchAdapter.MatchViewHolder {
+~ TextView firstTeam
+}
+class com.Kursach.bookingsystem.register {
+~ Button btn2_signup
+~ EditText user_email
+~ FirebaseAuth mAuth
+~ FirebaseDatabase mDatabase
+~ DatabaseReference data
+~ FirebaseUser user
+# void onCreate(Bundle)
+}
+class com.Kursach.bookingsystem.HomeFragment {
+- {static} String ARG_PARAM1
+- {static} String ARG_PARAM2
+- String mParam1
+- String mParam2
+- ArrayList<Matches> matchesArrayList
+- RecyclerView recyclerView
+~ FirebaseDatabase mDatabase
+~ DatabaseReference ref
+- MatchAdapter matchAdapter
++ {static} HomeFragment newInstance(String,String)
++ void onCreate(Bundle)
++ View onCreateView(LayoutInflater,ViewGroup,Bundle)
++ void onViewCreated(View,Bundle)
+- void dataInitialize()
+}
+class com.Kursach.bookingsystem.Item {
++ Bitmap image
++ String title
++ boolean isSelected
++ boolean isSelected()
++ void setSelected(boolean)
++ Bitmap getImage()
++ void setImage(Bitmap)
++ String getTitle()
++ void setTitle(String)
+}
+class com.Kursach.bookingsystem.models.User {
+- String name
+- String email
++ String getName()
++ void setName(String)
++ String getEmail()
++ void setEmail(String)
+}
+class com.Kursach.bookingsystem.MapActivity {
+~ BottomNavigationView bottomNavigationView
+~ FirebaseAuth mAuth
+~ DatabaseReference mRef
+~ FirebaseDatabase mDatabase
+~ HomeFragment firstFragment
+~ HistoryFragment secondFragment
+~ PersonFragment thirdFragment
+~ StadiumsFragment StadiumsFragment
+# void onCreate(Bundle)
++ boolean onNavigationItemSelected(MenuItem)
+}
+class com.Kursach.bookingsystem.StadiumAdapter {
+~ Context context
+~ ArrayList<Stadium> stadiumsArrayList
+- StadiumViewHolder holder
++ StadiumViewHolder onCreateViewHolder(ViewGroup,int)
++ void onBindViewHolder(StadiumViewHolder,int)
++ int getItemCount()
+}
+class com.Kursach.bookingsystem.StadiumAdapter.StadiumViewHolder {
+~ ImageView stadiumImage
+~ TextView name
+}
+class com.Kursach.bookingsystem.SignIn {
+~ EditText username
+~ Button loginbutton
+~ FirebaseAuth auth
+~ FirebaseDatabase db
+~ DatabaseReference users
+~ RelativeLayout root
+# void onCreate(Bundle)
+# void onActivityResult(int,int,Intent)
+}
+
+
+androidx.appcompat.app.AppCompatActivity <|-- com.Kursach.bookingsystem.SeatSelection
+androidx.fragment.app.Fragment <|-- com.Kursach.bookingsystem.HistoryFragment
+androidx.appcompat.app.AppCompatActivity <|-- com.Kursach.bookingsystem.AddMatch
+androidx.appcompat.app.AppCompatActivity <|-- com.Kursach.bookingsystem.MainActivity
+androidx.appcompat.app.AppCompatActivity <|-- com.Kursach.bookingsystem.ShopActivity
+com.Kursach.bookingsystem.OnClickListener <|.. com.Kursach.bookingsystem.Choosing_seat
+androidx.appcompat.app.AppCompatActivity <|-- com.Kursach.bookingsystem.Choosing_seat
+androidx.fragment.app.Fragment <|-- com.Kursach.bookingsystem.PersonFragment
+androidx.fragment.app.Fragment <|-- com.Kursach.bookingsystem.StadiumsFragment
+com.Kursach.bookingsystem.Adapter <|-- com.Kursach.bookingsystem.MatchAdapter
+com.Kursach.bookingsystem.MatchAdapter +.. com.Kursach.bookingsystem.MatchAdapter.OnMatchesClickListener
+com.Kursach.bookingsystem.MatchAdapter +.. com.Kursach.bookingsystem.MatchAdapter.MatchViewHolder
+com.Kursach.bookingsystem.ViewHolder <|-- com.Kursach.bookingsystem.MatchAdapter.MatchViewHolder
+androidx.appcompat.app.AppCompatActivity <|-- com.Kursach.bookingsystem.register
+androidx.fragment.app.Fragment <|-- com.Kursach.bookingsystem.HomeFragment
+com.Kursach.bookingsystem.OnNavigationItemSelectedListener <|.. com.Kursach.bookingsystem.MapActivity
+androidx.appcompat.app.AppCompatActivity <|-- com.Kursach.bookingsystem.MapActivity
+com.Kursach.bookingsystem.Adapter <|-- com.Kursach.bookingsystem.StadiumAdapter
+com.Kursach.bookingsystem.StadiumAdapter +.. com.Kursach.bookingsystem.StadiumAdapter.StadiumViewHolder
+com.Kursach.bookingsystem.ViewHolder <|-- com.Kursach.bookingsystem.StadiumAdapter.StadiumViewHolder
+androidx.appcompat.app.AppCompatActivity <|-- com.Kursach.bookingsystem.SignIn
+@enduml

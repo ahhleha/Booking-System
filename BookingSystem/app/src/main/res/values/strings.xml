@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">BookingSystem</string>
+    <string name="app_in_name">MATCHSEAT</string>
+    <string name="app_name_after">Stadium seat booking system</string>
+    <string name="text_bottom">Вход в учётную запись</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>
